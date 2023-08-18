@@ -1,9 +1,11 @@
 package com.project.wakathon.Gatwork.BackEnd.Member.domain;
 
 import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "member_tag")
+@NoArgsConstructor
 public class MemberTag
 {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
