@@ -4,6 +4,9 @@ import com.project.wakathon.Gatwork.BackEnd.Member.domain.MemberTag;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public interface MemberTagRepository extends JpaRepository<MemberTag, Integer> {
+import java.util.ArrayList;
+import java.util.Optional;
+
+public interface MemberTagRepository extends JpaRepository<MemberTag, Integer>, CustomRepository {
+    Optional<MemberTag> findByMemberId(Integer integer);
 }
