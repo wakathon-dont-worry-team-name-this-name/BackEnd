@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 public class CardResponseDto {
-    private long id;
+    private int id;
     private int viewCount;
     private String major;
     private int score;
@@ -16,7 +16,8 @@ public class CardResponseDto {
 
     // Entity to Dto
     @Builder
-    public CardResponseDto(int viewCount, String major, int score, int studentId, String introduce, String profileImg) {
+    public CardResponseDto(int id, int viewCount, String major, int score, int studentId, String introduce, String profileImg) {
+        this.id = id;
         this.viewCount = viewCount;
         this.major = major;
         this.score = score;

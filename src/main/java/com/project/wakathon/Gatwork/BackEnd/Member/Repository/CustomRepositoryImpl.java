@@ -1,11 +1,15 @@
 package com.project.wakathon.Gatwork.BackEnd.Member.Repository;
 
+import com.project.wakathon.Gatwork.BackEnd.Member.domain.Card;
 import com.project.wakathon.Gatwork.BackEnd.Member.domain.Tag;
+import com.project.wakathon.Gatwork.BackEnd.Member.domain.TagCategory;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+import static com.project.wakathon.Gatwork.BackEnd.Member.domain.QCard.card;
+import static com.project.wakathon.Gatwork.BackEnd.Member.domain.QMember.member;
 import static com.project.wakathon.Gatwork.BackEnd.Member.domain.QMemberTag.memberTag;
 
 @Repository
@@ -26,5 +30,12 @@ public class CustomRepositoryImpl implements CustomRepository{
                 .fetch();
     }
 
-    // .. other Repository
+    // Card Repository
+    @Override
+    public List<Card> CustomCardFindByKeyword(TagCategory tagCategory) {
+        List<Card> fetch = jpaQueryFactory
+                .selectFrom(card)
+                .join(card.member, member).on()
+
+    }
 }

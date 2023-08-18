@@ -33,7 +33,6 @@ public class MemberService {
 
         // todo: 유효성 검사
 
-
         return TagsInUserResponseDto.builder()
                 .tagCategories((ArrayList<TagCategory>) tags.stream()
                         .map(Tag::getTagCategory)
@@ -48,12 +47,19 @@ public class MemberService {
         Member member = memberRepository.findById(memberId).orElseThrow(RuntimeException::new);
 
         return CardResponseDto.builder()
+                .id(card.getId())
                 .studentId(member.getStudentId())
                 .profileImg(member.getProfileImg())
                 .viewCount(card.getViewCount())
-                .score(card.getScore())
                 .major(card.getMajor())
                 .introduce(member.getIntroduce())
                 .build();
+    }
+
+    // 추천(키워드)에 따른 명함 리스트 가져오기
+    public List<CardResponseDto> getCardsByRole(TagCategory tagCategory) {
+        List<Card> cards = cardRepository.CustomCardFindByKeyword(tagCategory);
+
+        return null;
     }
 }
