@@ -26,9 +26,11 @@ public class QMemberTag extends EntityPathBase<MemberTag> {
 
     public final QMember member;
 
+    public final QRole role;
+
     public final NumberPath<Integer> score = createNumber("score", Integer.class);
 
-    public final QTag tag;
+    public final NumberPath<Integer> scoreCnt = createNumber("scoreCnt", Integer.class);
 
     public QMemberTag(String variable) {
         this(MemberTag.class, forVariable(variable), INITS);
@@ -49,7 +51,7 @@ public class QMemberTag extends EntityPathBase<MemberTag> {
     public QMemberTag(Class<? extends MemberTag> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
         this.member = inits.isInitialized("member") ? new QMember(forProperty("member")) : null;
-        this.tag = inits.isInitialized("tag") ? new QTag(forProperty("tag")) : null;
+        this.role = inits.isInitialized("role") ? new QRole(forProperty("role")) : null;
     }
 
 }

@@ -1,10 +1,9 @@
 package com.project.wakathon.Gatwork.BackEnd.Member.Repository;
 
-import com.project.wakathon.Gatwork.BackEnd.Member.domain.Card;
+import com.project.wakathon.Gatwork.BackEnd.Member.domain.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CardRepository extends JpaRepository<Card, Long> {
-
+public interface RoleRepository extends JpaRepository<Role, Integer> {
 }

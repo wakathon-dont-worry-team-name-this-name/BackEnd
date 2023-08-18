@@ -18,9 +18,13 @@ public class Member {
     @Column(name = "member_id")
     private int id;
 
-    private String name;
+    // 로그인할 회원 아이디
+    private String memberName;
+    private String memberPwd;
 
-    private int studentId;
+    private String nickName;
+
+    private String studentId;
 
     private String introduce;
 
@@ -28,9 +32,15 @@ public class Member {
 
     private String contact;
 
+    @OneToMany(mappedBy = "member", orphanRemoval = true)
+    List<MemberTag> memberTagList = new ArrayList<>();
+
     @Builder
-    public Member(String name, int studentId, String introduce, String profileImg, String contact) {
-        this.name = name;
+    public Member(String memberName, String memberPwd, String nickName,
+                  String studentId, String introduce, String profileImg, String contact) {
+        this.memberName = memberName;
+        this.memberPwd = memberPwd;
+        this.nickName = nickName;
         this.studentId = studentId;
         this.introduce = introduce;
         this.profileImg = profileImg;
