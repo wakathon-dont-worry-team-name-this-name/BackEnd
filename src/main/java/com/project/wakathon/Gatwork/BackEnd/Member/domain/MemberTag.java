@@ -1,13 +1,15 @@
 package com.project.wakathon.Gatwork.BackEnd.Member.domain;
 
 import jakarta.persistence.*;
+import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "member_tag")
 @NoArgsConstructor
-public class MemberTag
-{
+@Getter
+public class MemberTag {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "member_tag_id")
     private int id;

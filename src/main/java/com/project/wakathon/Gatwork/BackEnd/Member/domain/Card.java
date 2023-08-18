@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Getter
 public class Card {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private int id;
 
     // 유저 매핑
     @OneToOne(fetch = FetchType.LAZY)
@@ -18,14 +18,12 @@ public class Card {
 
     private int viewCount;
     private String major;
-    private int score;
 
     @Builder
-    public Card(Member member, int viewCount, String major, int score) {
+    public Card(Member member, int viewCount, String major) {
         this.member = member;
         this.viewCount = viewCount;
         this.major = major;
-        this.score = score;
     }
 
 }

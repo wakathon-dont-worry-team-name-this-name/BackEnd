@@ -21,7 +21,7 @@ public class QInteresting extends EntityPathBase<Interesting> {
 
     public final EnumPath<InterestingCategory> category = createEnum("category", InterestingCategory.class);
 
-    public final NumberPath<Long> id = createNumber("id", Long.class);
+    public final NumberPath<Integer> id = createNumber("id", Integer.class);
 
     public QInteresting(String variable) {
         super(Interesting.class, forVariable(variable));

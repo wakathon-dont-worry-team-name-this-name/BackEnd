@@ -10,8 +10,7 @@ import java.util.Locale;
 public class Interesting {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "interesting_id")
-    private long id;
-
+    private int id;
     @Enumerated(EnumType.STRING)
     private InterestingCategory category;
 
