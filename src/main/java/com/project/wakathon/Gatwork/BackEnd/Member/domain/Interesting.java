@@ -13,6 +13,7 @@ public class Interesting {
     private int id;
     @Enumerated(EnumType.STRING)
     private InterestingCategory category;
+    
 
     public Interesting(InterestingCategory category) {
         this.category = category;
