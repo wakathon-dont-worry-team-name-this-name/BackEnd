@@ -30,12 +30,17 @@ public class CustomRepositoryImpl implements CustomRepository{
                 .fetch();
     }
 
-    // Card Repository
     @Override
     public List<Card> CustomCardFindByKeyword(RoleCategory tagCategory) {
-        List<Card> fetch = jpaQueryFactory
-                .selectFrom(card)
-                .join(card.member, member).on()
-
+        return null;
     }
+
+    // Card Repository
+//    @Override
+//    public List<Card> CustomCardFindByKeyword(RoleCategory tagCategory) {
+//        List<Card> fetch = jpaQueryFactory
+//                .selectFrom(card)
+//                .join(card.member, member).on()
+//
+//    }
 }

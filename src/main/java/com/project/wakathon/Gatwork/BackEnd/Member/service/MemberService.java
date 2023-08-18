@@ -79,9 +79,9 @@ public class MemberService {
     }
 
     // 추천(키워드)에 따른 명함 리스트 가져오기
-    public List<CardResponseDto> getCardsByRole(RoleCategory roleCategory) {
-        List<Card> cards = cardRepository.CustomCardFindByKeyword(roleCategory);
-
-        return null;
-    }
+//    public List<CardResponseDto> getCardsByRole(RoleCategory roleCategory) {
+//        List<Card> cards = cardRepository.CustomCardFindByKeyword(roleCategory);
+//
+//        return null;
+//    }
 }

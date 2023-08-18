@@ -9,14 +9,14 @@ public class CardResponseDto {
     private int viewCount;
     private String major;
     private int score;
-    private int studentId;
+    private String studentId;
     private String introduce;
     private String profileImg;
 
 
     // Entity to Dto
     @Builder
-    public CardResponseDto(int id, int viewCount, String major, int score, int studentId, String introduce, String profileImg) {
+    public CardResponseDto(int id, int viewCount, String major, int score, String studentId, String introduce, String profileImg) {
         this.id = id;
         this.viewCount = viewCount;
         this.major = major;

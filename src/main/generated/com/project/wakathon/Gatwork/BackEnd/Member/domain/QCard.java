@@ -22,13 +22,11 @@ public class QCard extends EntityPathBase<Card> {
 
     public static final QCard card = new QCard("card");
 
-    public final NumberPath<Long> id = createNumber("id", Long.class);
+    public final NumberPath<Integer> id = createNumber("id", Integer.class);
 
     public final StringPath major = createString("major");
 
     public final QMember member;
-
-    public final NumberPath<Integer> score = createNumber("score", Integer.class);
 
     public final NumberPath<Integer> viewCount = createNumber("viewCount", Integer.class);
 
