@@ -11,5 +11,11 @@ public class Interesting {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "interesting_id")
     private long id;
+
+    @Enumerated(EnumType.STRING)
     private InterestingCategory category;
+
+    public Interesting(InterestingCategory category) {
+        this.category = category;
+    }
 }
