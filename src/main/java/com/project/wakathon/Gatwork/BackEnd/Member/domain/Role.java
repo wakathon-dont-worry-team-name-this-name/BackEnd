@@ -1,6 +1,7 @@
 package com.project.wakathon.Gatwork.BackEnd.Member.domain;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
@@ -9,6 +10,7 @@ import java.util.List;
 @Entity
 @Table(name = "role")
 @NoArgsConstructor
+@Getter
 public class Role {
 
     public Role(RoleCategory roleCategory) {

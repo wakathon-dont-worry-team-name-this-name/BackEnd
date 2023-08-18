@@ -1,17 +1,16 @@
 package com.project.wakathon.Gatwork.BackEnd.Member.service;
 
+import com.project.wakathon.Gatwork.BackEnd.Member.domain.*;
+import com.project.wakathon.Gatwork.BackEnd.Member.request.MemberDto;
 import com.project.wakathon.Gatwork.BackEnd.Member.Repository.CardRepository;
 import com.project.wakathon.Gatwork.BackEnd.Member.Repository.MemberRepository;
 import com.project.wakathon.Gatwork.BackEnd.Member.Repository.MemberTagRepository;
-import com.project.wakathon.Gatwork.BackEnd.Member.Repository.TagRepository;
-import com.project.wakathon.Gatwork.BackEnd.Member.domain.Card;
-import com.project.wakathon.Gatwork.BackEnd.Member.domain.Member;
-import com.project.wakathon.Gatwork.BackEnd.Member.domain.Tag;
-import com.project.wakathon.Gatwork.BackEnd.Member.domain.TagCategory;
 import com.project.wakathon.Gatwork.BackEnd.Member.response.CardResponseDto;
 import com.project.wakathon.Gatwork.BackEnd.Member.response.TagsInUserResponseDto;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import jakarta.persistence.EntityNotFoundException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +22,8 @@ public class MemberService {
 
     private final MemberRepository memberRepository;
     private final MemberTagRepository memberTagRepository;
+    private final CardRepository cardRepository;
+
     public void logIn(MemberDto memberDto) {
 
     }
@@ -46,22 +47,17 @@ public class MemberService {
         memberTag.updateScoreCnt();
     }
 
-    private final MemberRepository memberRepository;
-    private final MemberTagRepository memberTagRepository;
-    private final TagRepository tagRepository;
-    private final CardRepository cardRepository;
-
 
     // Tag 리스트
     public TagsInUserResponseDto getTagsInUser(int memberId) {
         // Client Error Handling
-        List<Tag> tags = memberTagRepository.CustomTagFindByMemberId(memberId);
+        List<Role> roles = memberTagRepository.CustomTagFindByMemberId(memberId);
 
         // todo: 유효성 검사
 
         return TagsInUserResponseDto.builder()
-                .tagCategories((ArrayList<TagCategory>) tags.stream()
-                        .map(Tag::getTagCategory)
+                .roleCategories((ArrayList<RoleCategory>) roles.stream()
+                        .map(Role::getRoleCategory)
                         .distinct()
                         .collect(Collectors.toList()))
                 .build();
@@ -83,8 +79,8 @@ public class MemberService {
     }
 
     // 추천(키워드)에 따른 명함 리스트 가져오기
-    public List<CardResponseDto> getCardsByRole(TagCategory tagCategory) {
-        List<Card> cards = cardRepository.CustomCardFindByKeyword(tagCategory);
+    public List<CardResponseDto> getCardsByRole(RoleCategory roleCategory) {
+        List<Card> cards = cardRepository.CustomCardFindByKeyword(roleCategory);
 
         return null;
     }
