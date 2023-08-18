@@ -15,4 +15,12 @@ public class MemberTag
     public void updateScore(int score) {
         this.score = score;
     }
+
+    @ManyToOne(fetch= FetchType.LAZY)
+    @JoinColumn(name = "member_id")
+    Member member;
+
+    @ManyToOne(fetch= FetchType.LAZY)
+    @JoinColumn(name = "tag_id")
+    Tag tag;
 }

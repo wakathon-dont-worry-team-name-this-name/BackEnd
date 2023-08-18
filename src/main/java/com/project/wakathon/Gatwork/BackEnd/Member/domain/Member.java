@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 import org.springframework.boot.autoconfigure.web.WebProperties;
 import org.springframework.stereotype.Controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @NoArgsConstructor
 public class Member {
