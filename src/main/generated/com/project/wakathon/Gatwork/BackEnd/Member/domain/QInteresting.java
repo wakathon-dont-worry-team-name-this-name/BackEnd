@@ -7,6 +7,7 @@ import com.querydsl.core.types.dsl.*;
 import com.querydsl.core.types.PathMetadata;
 import javax.annotation.processing.Generated;
 import com.querydsl.core.types.Path;
+import com.querydsl.core.types.dsl.PathInits;
 
 
 /**
@@ -22,6 +23,8 @@ public class QInteresting extends EntityPathBase<Interesting> {
     public final EnumPath<InterestingCategory> category = createEnum("category", InterestingCategory.class);
 
     public final NumberPath<Integer> id = createNumber("id", Integer.class);
+
+    public final ListPath<MemberInteresting, QMemberInteresting> memberInterestings = this.<MemberInteresting, QMemberInteresting>createList("memberInterestings", MemberInteresting.class, QMemberInteresting.class, PathInits.DIRECT2);
 
     public QInteresting(String variable) {
         super(Interesting.class, forVariable(variable));

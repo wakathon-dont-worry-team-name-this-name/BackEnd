@@ -11,7 +11,7 @@ Spring:
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/flint_back_local?serverTimezone=Asia/Seoul
+    url: jdbc:mysql://localhost:13306/waka?serverTimezone=Asia/Seoul
     username: root
     password: admin
 

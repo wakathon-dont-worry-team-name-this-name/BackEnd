@@ -1,10 +1,12 @@
 package com.project.wakathon.Gatwork.BackEnd.Member.domain;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
 @NoArgsConstructor
+@Getter
 public class MemberInteresting {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

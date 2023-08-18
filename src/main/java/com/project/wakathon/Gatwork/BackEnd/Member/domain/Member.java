@@ -18,6 +18,9 @@ public class Member {
     @Column(name = "member_id")
     private int id;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    private Card card;
+
     // 로그인할 회원 아이디
     private String memberName;
     private String memberPwd;
@@ -34,6 +37,9 @@ public class Member {
 
     @OneToMany(mappedBy = "member", orphanRemoval = true)
     List<MemberTag> memberTagList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "member", orphanRemoval = true)
+    List<MemberInteresting> memberInterestingList = new ArrayList<>();
 
     @Builder
     public Member(String memberName, String memberPwd, String nickName,

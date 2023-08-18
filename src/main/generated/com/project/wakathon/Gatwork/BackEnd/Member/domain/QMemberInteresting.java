@@ -47,7 +47,7 @@ public class QMemberInteresting extends EntityPathBase<MemberInteresting> {
     public QMemberInteresting(Class<? extends MemberInteresting> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
         this.interesting = inits.isInitialized("interesting") ? new QInteresting(forProperty("interesting")) : null;
-        this.member = inits.isInitialized("member") ? new QMember(forProperty("member")) : null;
+        this.member = inits.isInitialized("member") ? new QMember(forProperty("member"), inits.get("member")) : null;
     }
 
 }

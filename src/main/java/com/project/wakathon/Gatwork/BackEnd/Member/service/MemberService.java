@@ -1,5 +1,6 @@
 package com.project.wakathon.Gatwork.BackEnd.Member.service;
 
+import com.project.wakathon.Gatwork.BackEnd.Member.Repository.RoleRepository;
 import com.project.wakathon.Gatwork.BackEnd.Member.domain.*;
 import com.project.wakathon.Gatwork.BackEnd.Member.request.MemberDto;
 import com.project.wakathon.Gatwork.BackEnd.Member.Repository.CardRepository;
@@ -14,6 +15,7 @@ import jakarta.persistence.EntityNotFoundException;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -23,6 +25,7 @@ public class MemberService {
     private final MemberRepository memberRepository;
     private final MemberTagRepository memberTagRepository;
     private final CardRepository cardRepository;
+    private final RoleRepository roleRepository;
 
     public void logIn(MemberDto memberDto) {
 
@@ -79,9 +82,8 @@ public class MemberService {
     }
 
     // 추천(키워드)에 따른 명함 리스트 가져오기
-//    public List<CardResponseDto> getCardsByRole(RoleCategory roleCategory) {
-//        List<Card> cards = cardRepository.CustomCardFindByKeyword(roleCategory);
-//
-//        return null;
-//    }
+    public List<CardResponseDto> getCardsByRole(RoleCategory roleCategory) {
+
+        return null;
+    }
 }

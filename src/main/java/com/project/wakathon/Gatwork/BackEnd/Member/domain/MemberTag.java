@@ -28,11 +28,11 @@ public class MemberTag {
 
     @ManyToOne(fetch= FetchType.LAZY, cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn(name = "member_id")
-    Member member;
+    private Member member;
 
     @ManyToOne(fetch= FetchType.LAZY, cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn(name = "role_id")
-    Role role;
+    private Role role;
 
     public MemberTag(Member member, Role role) {
         this.member = member;

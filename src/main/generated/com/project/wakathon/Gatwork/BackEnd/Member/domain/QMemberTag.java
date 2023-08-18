@@ -50,7 +50,7 @@ public class QMemberTag extends EntityPathBase<MemberTag> {
 
     public QMemberTag(Class<? extends MemberTag> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
-        this.member = inits.isInitialized("member") ? new QMember(forProperty("member")) : null;
+        this.member = inits.isInitialized("member") ? new QMember(forProperty("member"), inits.get("member")) : null;
         this.role = inits.isInitialized("role") ? new QRole(forProperty("role")) : null;
     }
 

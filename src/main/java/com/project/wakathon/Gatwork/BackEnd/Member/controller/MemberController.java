@@ -41,7 +41,7 @@ public class MemberController {
     // Role에 맞는 명함 리스트 보내기
     @GetMapping(path = "api/member")
     public List<CardResponseDto> getCardsByRole(@RequestParam RoleCategory roleCategory) {
-        return null;
+        return memberService.getCardsByRole(roleCategory);
     }
 
     // 선택한 명함의 정보를 받기
