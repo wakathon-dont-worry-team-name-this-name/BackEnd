@@ -2,6 +2,7 @@ package com.project.wakathon.Gatwork.BackEnd.Member.domain;
 
 import jakarta.persistence.*;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.boot.autoconfigure.web.WebProperties;
 import org.springframework.stereotype.Controller;
@@ -11,6 +12,7 @@ import java.util.List;
 
 @Entity
 @NoArgsConstructor
+@Getter
 public class Member {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "member_id")

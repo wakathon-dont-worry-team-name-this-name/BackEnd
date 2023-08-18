@@ -5,9 +5,9 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @NoArgsConstructor
-public class memberInteresting {
+public class MemberInteresting {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private int id;
 
     // 관심 분야 매핑
     @ManyToOne(fetch = FetchType.LAZY)
